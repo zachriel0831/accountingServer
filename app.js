@@ -19,7 +19,7 @@ mongoose.connect(`mongodb+srv://zackou:zack0831@myaccounting-xzlks.mongodb.net/t
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
   
-var whitelist = ['http://localhost:8083', 'http://example2.com']
+var whitelist = ['http://localhost:8083', 'https://zachriel-accountting.herokuapp.com/']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -44,4 +44,6 @@ app.use('/user', authRoute);
 
 app.listen(PORT, function () {
     console.log(`Listening on port ${PORT}`);
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+
 });
