@@ -22,6 +22,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var whitelist = ['http://localhost:8083', 'http://00bfdf78.ngrok.io',' https://zachriel-accountting.herokuapp.com']
 var corsOptions = {
   origin: function (origin, callback) {
+
+    console.log('origin ' + origin);
+    
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
