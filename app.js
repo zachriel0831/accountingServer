@@ -19,7 +19,7 @@ mongoose.connect(`mongodb+srv://zackou:zack0831@myaccounting-xzlks.mongodb.net/t
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
   
-var whitelist = ['http://localhost:8083', 'http://00bfdf78.ngrok.io']
+var whitelist = ['http://localhost:8083', 'http://00bfdf78.ngrok.io',' https://zachriel-accountting.herokuapp.com']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
