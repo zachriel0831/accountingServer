@@ -31,10 +31,10 @@ const UserSchema = new mongoose.Schema({
     }
 });
 UserSchema.methods.comparePassword = function comparePassword(password, callback) {
-    console.log('comparing password ' + password + ' and ' + this.password);
+    //console.log('comparing password ' + password + ' and ' + this.password);
     let results = bcrypt.compareSync(password, this.password,callback);
 
-    console.log('results ' + results);
+    //console.log('results ' + results);
 
     if(results){
         callback(false,true);
@@ -49,7 +49,7 @@ UserSchema.methods.comparePassword = function comparePassword(password, callback
 
 UserSchema.pre('save', function saveHook(next) {
 
-    console.log('saving...' + next);
+    //console.log('saving...' + next);
     var user = this;
 
     if(!user.isModified('password')){
