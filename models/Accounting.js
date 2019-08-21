@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const AccountingSchema = new mongoose.Schema({
     user_id: {
-        type: String,
+        type: String, 
         index: { unique: false }
     },
     itemName: {
@@ -42,7 +42,11 @@ const AccountingSchema = new mongoose.Schema({
         type: Date,
         required: true,
         default: new Date()
-    }
+    },
+    remark: {
+        type:String,
+        index:{unique:false}
+    },
 });
 
 module.exports = mongoose.model('Accounting', AccountingSchema);
