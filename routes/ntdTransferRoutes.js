@@ -81,7 +81,7 @@ router.post('/ntdtransfer_2_doAction', function (req, res, next) {
   
 });
 
-router.post('/ntdtransfer_3_doAction ', function (req, res, next) {
+router.post('/ntdtransfer_3_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
