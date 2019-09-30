@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes/index');
 const accountRoutes = require('./routes/accounting');
+const ntdTransferRoutes = require('./routes/ntdTransferRoutes');
 
 const authRoute = require('./routes/auth');
 const cors = require('cors');
@@ -50,6 +51,8 @@ app.use(cors());
 
 app.use('/home', authCheckMiddleware,routes);
 app.use('/account', authCheckMiddleware,accountRoutes);
+app.use('/ntdtransfer', authCheckMiddleware,ntdTransferRoutes);
+
 app.use('/user', authRoute);
 
 
