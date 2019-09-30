@@ -8,6 +8,10 @@ module.exports = {
     login: function(user_id, password, callback){
         console.log('login.... ' + password + '  '  + user_id);
         User.find({ user_id: user_id }, function(err, user) {
+
+            console.log('########### ' + JSON.stringify(user));
+
+
             if(err){
                 callback(err, null);
                 return;
