@@ -4,7 +4,7 @@ const userController = require('../controllers/userController')
 const accountingController = require('../controllers/accountingController')
 
 router.post('/home_initView', function (req, res, next) {
-  console.clear('reqbody ' + req.body);
+  console.log('reqbody ' + req.body);
   let data = {};
 
   userController.find(req.body, function (err, results) {
@@ -18,7 +18,7 @@ router.post('/home_initView', function (req, res, next) {
     }
 
     data.userDetail = results;
-    //console.log('data.userDetail.user_id ' + data.userDetail[0].user_id);
+    console.log('data.userDetail.user_id ' + data.userDetail[0].user_id);
 
     accountingController.find(data.userDetail[0].user_id, function (err, results) {
       if (err) {
@@ -31,7 +31,7 @@ router.post('/home_initView', function (req, res, next) {
       }
 
       data.accountDetail = results;
-      //console.log('data.accountDetail ' + data.accountDetail);
+      console.log('data.accountDetail ' + data.accountDetail);
 
       res.json({
         success: 1,
