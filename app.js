@@ -19,26 +19,26 @@ mongoose.connect(`mongodb+srv://zackou:zack0831@myaccounting-xzlks.mongodb.net/t
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
   
-var whitelist = ['http://localhost:8083', 'http://00bfdf78.ngrok.io','https://zachriel-accounting-client.herokuapp.com']
-var corsOptions = {
-  origin: function (origin, callback) {
+// var whitelist = ['http://localhost:8083', 'http://00bfdf78.ngrok.io','https://zachriel-accounting-client.herokuapp.com']
+// var corsOptions = {
+//   origin: function (origin, callback) {
 
-    console.log('origin ' + origin);
-    console.log('whitelist ' + whitelist);
-    console.log(whitelist.includes(origin));
-    console.log(whitelist.indexOf(origin));
+//     console.log('origin ' + origin);
+//     console.log('whitelist ' + whitelist);
+//     console.log(whitelist.includes(origin));
+//     console.log(whitelist.indexOf(origin));
 
-    if (whitelist.includes(origin)) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+//     if (whitelist.includes(origin)) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
+// app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
+app.use(cors());
 // app.use('/',function(req, res, next){
 //   console.log("A new request received at " + Date.now());
 //   console.log(req.body);
