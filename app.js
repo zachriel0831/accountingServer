@@ -1,9 +1,12 @@
 const express = require('express');
 const routes = require('./routes/index');
+const accountRoutes = require('./routes/accounting');
+
 const authRoute = require('./routes/auth');
 const cors = require('cors');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
+const authCheckMiddleware  = require('./middleware/authCheck');
 
 require('dotenv').config({path:'./.env' })
 
@@ -12,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 const dbURL = process.env.MONGO_DB_URL
 
 let ff = encodeURIComponent('<zack0831@>@myaccounting')
-mongoose.connect(`mongodb+srv://zackou:zack0831@myaccounting-xzlks.mongodb.net/test?retryWrites=true`,{useNewUrlParser: true}).then(() => {
+mongoose.connect(`mongodb+srv://zackou:zack0831@myaccounting-xzlks.mongodb.net/myAccountings?retryWrites=true`,{useNewUrlParser: true}).then(() => {
     console.log('Connection to the Atlas Cluster is successful!')
   }).catch( (err) => console.error(err));
 
@@ -44,7 +47,9 @@ app.use(cors());
 //   console.log(req.body);
 //   next();
 // });
-app.use('/', routes);
+
+app.use('/home', authCheckMiddleware,routes);
+app.use('/account', authCheckMiddleware,accountRoutes);
 app.use('/user', authRoute);
 
 

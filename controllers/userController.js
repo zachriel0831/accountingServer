@@ -29,7 +29,7 @@ module.exports = {
         
         
         User.create(params, function(err, result){
-            console.log('result ' + result );
+            //console.log('result ' + result );
             
             if(err){
                 console.log('err ' + err);
