@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const accountingController = require('../controllers/accountingController')
 
-router.post('/ntdtransfer_1_init ', function (req, res, next) {
+router.post('/ntdtransfer_1_init', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
