@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const accountingController = require('../controllers/accountingController')
 
-router.post('/ntdtransfer_1_init', function (req, res, next) {
+router.post('/Ntdtransfer_1_init', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
@@ -42,7 +42,7 @@ router.post('/ntdtransfer_1_init', function (req, res, next) {
   
 });
 
-router.post('/ntdtransfer_2_doAction', function (req, res, next) {
+router.post('/Ntdtransfer_2_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
@@ -58,7 +58,7 @@ router.post('/ntdtransfer_2_doAction', function (req, res, next) {
   
 });
 
-router.post('/ntdtransfer_3_doAction', function (req, res, next) {
+router.post('/Ntdtransfer_3_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
@@ -79,7 +79,7 @@ router.post('/ntdtransfer_3_doAction', function (req, res, next) {
   
 });
 
-router.post('/ntdTransfer_4_Rst_doAction', function (req, res, next) {
+router.post('/NtdTransfer_4_Rst_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
