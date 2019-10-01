@@ -42,7 +42,7 @@ router.post('/ntdtransfer_1_init', function (req, res, next) {
   
 });
 
-router.post('/ntdtransfer_1_doAction', function (req, res, next) {
+router.post('/ntdtransfer_2_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
@@ -58,7 +58,7 @@ router.post('/ntdtransfer_1_doAction', function (req, res, next) {
   
 });
 
-router.post('/ntdtransfer_2_doAction', function (req, res, next) {
+router.post('/ntdtransfer_3_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
@@ -81,7 +81,7 @@ router.post('/ntdtransfer_2_doAction', function (req, res, next) {
   
 });
 
-router.post('/ntdtransfer_3_doAction', function (req, res, next) {
+router.post('/ntdTransfer_4_Rst_doAction', function (req, res, next) {
     console.clear('reqbody ' +req.body);
 
     let results = {};
