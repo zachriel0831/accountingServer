@@ -47,7 +47,7 @@ router.post('/ntdtransfer_2_doAction', function (req, res, next) {
 
     let results = {};
 
-    results.securityParam = { phone: "0944567244" };
+    results.securityParam = { phone: "0944567244" ,otpCode:'124422'};
 
 
 
@@ -71,8 +71,6 @@ router.post('/ntdtransfer_3_doAction', function (req, res, next) {
         results.trnType = '即時轉帳',
         results.txdate = '2019/05/30',
         results.remark = '',
-
-
 
     res.json({
         success: 1,
