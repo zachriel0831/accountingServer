@@ -14,7 +14,6 @@ let app = express();
 const PORT = process.env.PORT || 3000;
 const dbURL = process.env.MONGO_DB_URL
 
-let ff = encodeURIComponent('<zack0831@>@myaccounting')
 mongoose.connect(`mongodb+srv://zackou:zack0831@myaccounting-xzlks.mongodb.net/myAccountings?retryWrites=true`,{useNewUrlParser: true}).then(() => {
     console.log('Connection to the Atlas Cluster is successful!')
   }).catch( (err) => console.error(err));
