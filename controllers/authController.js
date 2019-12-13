@@ -6,16 +6,20 @@ const User = require('../models/User')
 module.exports = {
 
     login: function(user_id, password, callback){
-        //console.log('login.... ' + password + '  '  + user_id);
+        console.log('login.... ' + password + '  '  + user_id);
         User.find({ user_id: user_id }, function(err, user) {
+
+            console.log('########### ' + JSON.stringify(user));
+
+
             if(err){
                 callback(err, null);
                 return;
             }
-            //console.log('name  ' + user[0].name);
-            //console.log('password  ' + user[0].password);
-            //console.log('user_id  ' + user[0].user_id);
-            //console.log('email  ' + user[0].email);
+            console.log('name  ' + user[0].name);
+            console.log('password  ' + user[0].password);
+            console.log('user_id  ' + user[0].user_id);
+            console.log('email  ' + user[0].email);
 
             if(!user){
                 //User not found
@@ -25,7 +29,7 @@ module.exports = {
                 user[0].comparePassword(password, function(err, isMatch) {
 
                     console.log('err ' + err);
-                    //console.log('isMatch ' + isMatch);
+                    console.log('isMatch ' + isMatch);
                     if(err){
                         callback(err, null);
                         return
@@ -46,7 +50,7 @@ module.exports = {
         console.log(user);
         var newUser = new User(user);
 
-        //console.log('newUser  ' + newUser);
+        console.log('newUser  ' + newUser);
         newUser.save(function(err, user) {
             console.debug('user created... ' + user);
             if(err){
@@ -55,7 +59,7 @@ module.exports = {
             }              
 
             var authToken = jwt.sign({'user_id':user.user_id,'name':user.name}, process.env.JWTSECRET);
-            //console.log('authToken ' + authToken);
+            console.log('authToken ' + authToken);
             callback(null, authToken);
         });
     }
