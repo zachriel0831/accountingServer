@@ -76,6 +76,12 @@ module.exports = {
             result.push(data);
         });
 
-        callback('',result);
+        callback('', result);
     },
+
+    wakeup:  (param, callback) => {
+        let msg = 'alright!'
+
+        callback('',msg);
+    }
 }
